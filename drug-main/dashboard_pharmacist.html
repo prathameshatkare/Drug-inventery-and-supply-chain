@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacist Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #5cb85c;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .dashboard-container {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .button {
+            background: #5cb85c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Pharmacist Dashboard</h1>
+</header>
+
+<div class="dashboard-container">
+    <div class="section">
+        <h2>Welcome, Pharmacist!</h2>
+        <p>Here you can manage prescriptions, track inventory, and view patient data.</p>
+    </div>
+    
+    <div class="section">
+        <h3>Actions</h3>
+        <button class="button" onclick="location.href='manage_prescriptions.html'">Manage Prescriptions</button>
+        <button class="button" onclick="location.href='track_inventory.html'">Track Inventory</button>
+        <button class="button" onclick="location.href='view_patient_data.html'">View Patient Data</button>
+    </div>
+</div>
+
+</body>
+</html>

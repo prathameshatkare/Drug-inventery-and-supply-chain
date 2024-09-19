@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug Supply Chain Management</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="drug-management.html">Drug Management</a></li>
+                <li><a href="compliance.html">Compliance</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <!-- <li><a href="settings.html">Settings</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to the Drug Supply Chain Management System</h1>
+        <p>Track your drug inventory, ensure compliance, and manage returns efficiently.</p>
+        <a href="dashboard.html" class="cta-button">Go to Dashboard</a>
+    </section>
+
+    <section class="status-overview">
+        <h2>Status Overview</h2>
+        <div class="status-cards">
+            <div class="card">
+                <h3>Total Drugs in Stock</h3>
+                <p>1200</p>
+            </div>
+            <div class="card">
+                <h3>Shipments in Transit</h3>
+                <p>30</p>
+            </div>
+            <div class="card">
+                <h3>Drugs Near Expiry</h3>
+                <p>50</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Drug Supply Chain Management. All rights reserved.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

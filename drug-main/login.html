@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="return handleLogin(event);">
+            <label for="userType">User Type:</label>
+            <select id="userType" name="userType" onchange="toggleCompanyName()">
+                <option value="manufacturer">Manufacturer</option>
+                <option value="retailer">Retailer</option>
+                <option value="wholesaler">Wholesaler</option>
+                <option value="pharmacist">Pharmacist</option>
+            </select>
+
+            <label for="uniqueID">Unique ID:</label>
+            <input type="text" id="uniqueID" name="uniqueID" required>
+
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <div id="companyNameContainer" style="display: none;">
+                <label for="companyName">Company Name:</label>
+                <input type="text" id="companyName" name="companyName" required>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function toggleCompanyName() {
+            const userType = document.getElementById('userType').value;
+            const companyNameContainer = document.getElementById('companyNameContainer');
+            companyNameContainer.style.display = userType === 'manufacturer' ? 'block' : 'none';
+        }
+
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            const userType = document.getElementById('userType').value;
+
+            // Redirect based on user type
+            switch (userType) {
+                case 'manufacturer':
+                    window.location.href = 'dashboard_manufacturer.html'; // Manufacturer dashboard
+                    break;
+                case 'retailer':
+                    window.location.href = 'dashboard_retailer.html'; // Retailer dashboard
+                    break;
+                case 'wholesaler':
+                    window.location.href = 'dashboard_wholesaler.html'; // Wholesaler dashboard
+                    break;
+                case 'pharmacist':
+                    window.location.href = 'dashboard_pharmacist.html'; // Pharmacist dashboard
+                    break;
+                default:
+                    alert('Invalid user type');
+            }
+
+            return false; // Prevent form submission
+        }
+    </script>
+    <link rel="stylesheet" href="dashboard.css">
+</body>
+</html>

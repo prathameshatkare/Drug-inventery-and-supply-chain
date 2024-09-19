@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - Drug Supply Chain Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transform: translateY(-2px);
+        }
+
+        .logo {
+            max-width: 150px;
+        }
+
+        .notifications {
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+
+        .alert-list, .notification-settings {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        .alert {
+            font-size: 1.2rem;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+        }
+
+        label {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        input, select, button[type="submit"] {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        button[type="submit"] {
+            grid-column: span 2;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin-bottom: 0;
+        }
+
+        ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+li {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between alert and button */
+    align-items: center; /* Center vertically */
+    margin-bottom: 10px; /* Add some space between list items */
+}
+
+.alert {
+    flex: 1; /* Allow alert to take available space */
+}
+
+button {
+    margin-left: 10px; /* Space between alert text and button */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="drug-management.html">Drug Management</a></li>
+                <li><a href="compliance.html">Compliance</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <!-- <li><a href="settings.html">Settings</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <section class="notifications">
+        <h1>Notifications</h1>
+
+        <div class="alert-list">
+            <h2>Current Alerts</h2>
+            <ul id="alertList">
+                <ul>
+                    <li>
+                        <span class="alert">Low Stock: Drug A</span> 
+                        <button onclick="dismissAlert(this)">Dismiss</button>
+                    </li>
+                    <li>
+                        <span class="alert">Demand Shift: Drug B</span> 
+                        <button onclick="dismissAlert(this)">Dismiss</button>
+                    </li>
+                    <li>
+                        <span class="alert">Near Expiry: Drug C</span> 
+                        <button onclick="dismissAlert(this)">Dismiss</button>
+                    </li>
+                    <li>
+                        <span class="alert">Expired: Drug D</span> 
+                        <button onclick="dismissAlert(this)">Dismiss</button>
+                    </li>
+                </ul>
+                
+            </ul>
+        </div>
+
+        <div class="notification-settings">
+            <h2>Email/SMS Notifications</h2>
+            <form id="notificationSettingsForm">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+
+                <label for="notificationType">Notification Type:</label>
+                <select id="notificationType" name="notificationType">
+                    <option value="lowStock">Low Stock</option>
+                    <option value="demandShift">Demand Shift</option>
+                    <option value="nearExpiry">Near Expiry</option>
+                    <option value="compliance">Compliance Issue</option>
+                </select>
+
+                <button type="submit">Save Settings</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Drug Supply Chain Management. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function dismissAlert(button) {
+            const alertItem = button.parentElement;
+            alertItem.remove();
+        }
+    </script>
+</body>
+</html>
